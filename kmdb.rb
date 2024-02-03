@@ -270,9 +270,10 @@ puts ""
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
 
+Movie.joins(:studio)
 movies = Movie.all
 for xxx in movies
-    puts "#{xxx["title"]} #{xxx["year_released"]} #{xxx["rated"]} #{xxx["studio_name"]}"
+    puts "#{xxx["title"]} #{xxx["year_released"]} #{xxx["rated"]} #{xxx.studio["name"]}"
 end
 
 # Prints a header for the cast output
