@@ -271,10 +271,8 @@ puts ""
 # TODO!
 
 movies = Movie.all
-studios = Studio.all
 for xxx in movies
-for yyy in studios
-    puts "#{xxx["title"]} #{xxx["year_released"]} #{xxx["rated"]} #{yyy["name"]}"
+    puts "#{xxx["title"]} #{xxx["year_released"]} #{xxx["rated"]} #{xxx["studio_name"]}"
 end
 
 # Prints a header for the cast output
