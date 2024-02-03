@@ -142,35 +142,30 @@ new_role ["movie_id"] = batman_begins["id"]
 new_role ["actor_id"] = christian_bale["id"]
 new_role ["character_name"] = "Bruce Wayne"
 new_role.save
-puts new_role.inspect
 
 new_role = Role.new
 new_role ["movie_id"] = batman_begins["id"]
 new_role ["actor_id"] = michael_caine["id"]
 new_role ["character_name"] = "Alfred"
 new_role.save
-puts new_role.inspect
 
 new_role = Role.new
 new_role ["movie_id"] = batman_begins["id"]
 new_role ["actor_id"] = liam_neeson["id"]
 new_role ["character_name"] = "Ra's Al Ghulred"
 new_role.save
-puts new_role.inspect
 
 new_role = Role.new
 new_role ["movie_id"] = batman_begins["id"]
 new_role ["actor_id"] = katie_holmes["id"]
 new_role ["character_name"] = "Rachel Dawes"
 new_role.save
-puts new_role.inspect
 
 new_role = Role.new
 new_role ["movie_id"] = batman_begins["id"]
 new_role ["actor_id"] = gary_oldman["id"]
 new_role ["character_name"] = "Commissioner Gordon"
 new_role.save
-puts new_role.inspect
 
 
 new_actor = Actor.new
@@ -195,35 +190,30 @@ new_role ["movie_id"] = the_dark_knight["id"]
 new_role ["actor_id"] = christian_bale["id"]
 new_role ["character_name"] = "Bruce Wayne"
 new_role.save
-puts new_role.inspect
 
 new_role = Role.new
 new_role ["movie_id"] = the_dark_knight["id"]
 new_role ["actor_id"] = heath_ledger["id"]
 new_role ["character_name"] = "Joker"
 new_role.save
-puts new_role.inspect
 
 new_role = Role.new
 new_role ["movie_id"] = the_dark_knight["id"]
 new_role ["actor_id"] = aaron_eckhart["id"]
 new_role ["character_name"] = "Harvey Dent"
 new_role.save
-puts new_role.inspect
 
 new_role = Role.new
 new_role ["movie_id"] = the_dark_knight["id"]
 new_role ["actor_id"] = michael_caine["id"]
 new_role ["character_name"] = "Alfred"
 new_role.save
-puts new_role.inspect
 
 new_role = Role.new
 new_role ["movie_id"] = the_dark_knight["id"]
 new_role ["actor_id"] = maggie_gyllenhaal["id"]
 new_role ["character_name"] = "Rachel Dawes"
 new_role.save
-puts new_role.inspect
 
 new_actor = Actor.new
 new_actor ["name"] = "Tom Hardy"
@@ -247,35 +237,30 @@ new_role ["movie_id"] = the_dark_knight_rises["id"]
 new_role ["actor_id"] = christian_bale["id"]
 new_role ["character_name"] = "Bruce Wayne"
 new_role.save
-puts new_role.inspect
 
 new_role = Role.new
 new_role ["movie_id"] = the_dark_knight_rises["id"]
 new_role ["actor_id"] = gary_oldman["id"]
 new_role ["character_name"] = "Commissioner Gordon"
 new_role.save
-puts new_role.inspect
 
 new_role = Role.new
 new_role ["movie_id"] = the_dark_knight_rises["id"]
 new_role ["actor_id"] = tom_hardy["id"]
 new_role ["character_name"] = "Bane"
 new_role.save
-puts new_role.inspect
 
 new_role = Role.new
 new_role ["movie_id"] = the_dark_knight_rises["id"]
 new_role ["actor_id"] = joseph_gordon_levitt["id"]
 new_role ["character_name"] = "John Blake"
 new_role.save
-puts new_role.inspect
 
 new_role = Role.new
 new_role ["movie_id"] = the_dark_knight_rises["id"]
 new_role ["actor_id"] = anne_hathaway["id"]
 new_role ["character_name"] = "Selina Kyle"
 new_role.save
-puts new_role.inspect
 
 # Prints a header for the movies output
 puts "Movies"
@@ -284,6 +269,13 @@ puts ""
 
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
+
+movies = Movie.all
+studios = Studio.all
+for xxx in movies
+for yyy in studios
+    puts "#{xxx["title"]} #{xxx["year_released"]} #{xxx["rated"]} #{yyy["name"]}"
+end
 
 # Prints a header for the cast output
 puts ""
