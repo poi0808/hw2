@@ -294,14 +294,11 @@ puts ""
 # TODO!
 
 
-display_movies = Movie.all
+roles = Role.all
 
-for movie in display_movies
-  title = movie["title"]
-  roles = Role.where("movie_id"=> movie["id"])
-  for role in roles
+for role in roles
+    movie_title = Movie.find_by("id" => role["movie_id"])
     actor = Actor.find_by("id"=> role["actor_id"])
     character = role["character_name"]
-    puts "#{title} #{actor["name"]} #{character}"
-  end
+    puts "#{ movie_title["title"]} #{actor["name"]} #{character}"
 end
