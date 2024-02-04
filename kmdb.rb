@@ -270,10 +270,17 @@ puts ""
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
 
-Movie.joins(:studio)
-movies = Movie.all
-for xxx in movies
-    puts "#{xxx["title"]} #{xxx["year_released"]} #{xxx["rated"]} #{xxx.studio["name"]}"
+display_movie = Movie.all
+display_studio = Studio.all
+
+for movies in display_movie
+    title = movies["title"]
+    year_released = movies["year_released"]
+    rated = movies["rated"]
+    for studios in display_studio
+        studio = studios["name"]
+    puts "#{title} #{year_released} #{rated} #{studio}"
+    end 
 end
 
 # Prints a header for the cast output
@@ -282,5 +289,24 @@ puts "Top Cast"
 puts "========"
 puts ""
 
+
+
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
+
+
+display_movies = Movie.all
+display_actors = Actor.all
+
+for movie in display_movies
+  title = movie["title"]
+  
+  roles = Role.where(movie_id: movie["id"])
+
+  for role in roles
+    actor = Actor.find_by(id: role["actor_id"])
+    character = role["character_name"]
+    
+    puts "#{title} #{actor["name"]} #{character}"
+  end
+end
